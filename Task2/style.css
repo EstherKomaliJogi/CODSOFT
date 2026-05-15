@@ -2,104 +2,11 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-    overflow-x:hidden;
-    background:#111;
-}
-
-/* TOP BAR */
-
-.top-bar{
-    width:100%;
-    background:linear-gradient(to right,#000000,#1a1a1a);
-    color:white;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:12px 60px;
-    font-size:14px;
-}
-
-.top-bar i{
-    color:#ff4d4d;
-    margin-right:8px;
-}
-
-.right i{
-    margin-left:20px;
-}
-
-/* NAVBAR */
-
-header{
-    width:100%;
-    padding:25px 60px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    background:linear-gradient(90deg,#8b0000,#c0392b,#ff4d4d);
-
-    position:sticky;
-    top:0;
-    z-index:1000;
-
-    box-shadow:0 4px 10px rgba(0,0,0,0.4);
-}
-
-.logo{
-    color:white;
-    font-size:42px;
-    font-weight:bold;
-    letter-spacing:3px;
-
-    transition:0.4s;
-}
-
-.logo:hover{
-    color:#ffe5e5;
-    transform:scale(1.05);
-}
-
-/* NAV LINKS */
-
-nav a{
-    text-decoration:none;
-    color:white;
-    margin-left:35px;
-
-    font-size:18px;
-    font-weight:bold;
-
-    position:relative;
-    transition:0.4s;
-}
-
-nav a::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-8px;
-
-    width:0%;
-    height:3px;
-
-    background:white;
-    transition:0.4s;
-}
-
-nav a:hover::after{
-    width:100%;
-}
-
-nav a:hover{
-    color:#ffe5e5;
+    font-family:'Montserrat',sans-serif;
+    background:#000;
 }
 
 /* HERO SECTION */
@@ -108,76 +15,208 @@ nav a:hover{
     width:100%;
     height:100vh;
 
-    background:url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1974&auto=format&fit=crop")
-    no-repeat center center/cover;
+    background:
+    radial-gradient(circle at center,
+    rgba(0,255,200,0.35),
+    rgba(0,0,0,0.85)),
+
+    linear-gradient(
+    135deg,
+    #031313,
+    #022626,
+    #034b4b,
+    #011111
+    );
 
     position:relative;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    overflow:hidden;
+}c
 
-    text-align:center;
+/* GOLD BORDER */
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+
+    top:25px;
+    left:25px;
+    right:25px;
+    bottom:25px;
+
+    border:1px solid rgba(212,175,55,0.3);
+
+    pointer-events:none;
 }
 
-/* DARK OVERLAY */
+/* NAVBAR */
 
-.overlay{
-    position:absolute;
+header{
     width:100%;
-    height:100%;
 
-    background:rgba(0,0,0,0.65);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:40px 60px;
+
+    position:relative;
+    z-index:2;
+}
+
+/* LOGO */
+
+.logo{
+    color:#d4af37;
+
+    font-size:40px;
+    letter-spacing:12px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    transition:0.4s;
+}
+
+.logo:hover{
+    transform:scale(1.05);
+    color:#f1d67a;
+}
+
+/* NAV LINKS */
+
+nav{
+    display:flex;
+    gap:55px;
+}
+
+nav a{
+    text-decoration:none;
+    color:rgba(255,255,255,0.75);
+
+    font-size:14px;
+    letter-spacing:3px;
+
+    position:relative;
+
+    transition:0.4s;
+}
+
+nav a::after{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-8px;
+
+    width:0%;
+    height:1px;
+
+    background:#d4af37;
+
+    transition:0.4s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+nav a:hover{
+    color:#d4af37;
+}
+
+/* SHOP BUTTON */
+
+.shop-btn{
+    padding:18px 38px;
+
+    background:#d4af37;
+    color:#111;
+
+    border:none;
+
+    font-size:14px;
+    letter-spacing:3px;
+
+    cursor:pointer;
+
+    transition:0.4s;
+}
+
+.shop-btn:hover{
+    background:#f1d67a;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 20px rgba(212,175,55,0.3);
 }
 
 /* CONTENT */
 
 .content{
-    position:relative;
-    z-index:1;
-    color:white;
+    position:absolute;
 
-    max-width:900px;
-    padding:20px;
+    top:50%;
+    left:50%;
 
-    animation:fadeIn 2s ease;
+    transform:translate(-50%,-50%);
+
+    text-align:center;
+
+    width:100%;
+
+    z-index:2;
 }
 
-.small-text{
-    font-size:28px;
-    font-style:italic;
+/* COLLECTION TEXT */
+
+.collection{
+    color:#d4af37;
+
+    letter-spacing:8px;
+
+    font-size:14px;
+
     margin-bottom:20px;
-    color:#f5c6c6;
 }
+
+/* MAIN HEADING */
 
 .content h1{
-    font-size:110px;
-    line-height:120px;
-    font-weight:900;
-    margin-bottom:30px;
+    font-family:'Cormorant Garamond',serif;
 
-    text-shadow:0 0 20px rgba(255,255,255,0.2);
+    font-size:120px;
+    font-weight:300;
+
+    color:#f5ede5;
+
+    line-height:1.05;
+
+    margin-bottom:30px;
 
     transition:0.5s;
 }
 
 .content h1:hover{
-    transform:scale(1.03);
-    color:#ffe5e5;
+    transform:scale(1.02);
 }
+
+.content h1 span{
+    color:#d4af37;
+    font-style:italic;
+}
+
+/* DESCRIPTION */
 
 .description{
-    font-size:24px;
-    line-height:40px;
-    margin-bottom:30px;
-    color:#f1f1f1;
-}
+    color:rgba(255,255,255,0.6);
 
-.content h3{
-    font-size:42px;
-    margin-bottom:40px;
-    font-style:italic;
-    color:#ffcccc;
+    letter-spacing:5px;
+
+    font-size:16px;
+
+    margin-bottom:55px;
 }
 
 /* BUTTONS */
@@ -186,17 +225,17 @@ nav a:hover{
     display:flex;
     justify-content:center;
     gap:25px;
-    flex-wrap:wrap;
 }
 
-button{
-    padding:18px 45px;
-    border:none;
-    cursor:pointer;
+/* BUTTON COMMON */
 
-    font-size:17px;
-    font-weight:bold;
-    letter-spacing:2px;
+.buttons button{
+    padding:20px 45px;
+
+    font-size:14px;
+    letter-spacing:3px;
+
+    cursor:pointer;
 
     transition:0.4s;
 }
@@ -204,96 +243,115 @@ button{
 /* BUTTON 1 */
 
 .btn1{
-    background:transparent;
-    border:2px solid white;
-    color:white;
+    background:#d4af37;
+    color:#111;
+
+    border:none;
 }
 
 .btn1:hover{
-    background:white;
-    color:#8b0000;
+    background:#f1d67a;
 
-    transform:translateY(-5px);
-    box-shadow:0 10px 20px rgba(255,255,255,0.3);
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 20px rgba(212,175,55,0.3);
 }
 
 /* BUTTON 2 */
 
 .btn2{
-    background:linear-gradient(45deg,#ff4d4d,#c0392b);
+    background:transparent;
+
+    border:1px solid rgba(255,255,255,0.3);
+
     color:white;
 }
 
 .btn2:hover{
-    transform:translateY(-5px) scale(1.05);
+    background:white;
+    color:#111;
 
-    background:linear-gradient(45deg,#ff6666,#ff1a1a);
-
-    box-shadow:0 10px 20px rgba(255,77,77,0.5);
+    transform:translateY(-4px);
 }
 
-/* ANIMATION */
+/* BOTTOM TEXT */
 
-@keyframes fadeIn{
+.bottom-left,
+.bottom-right{
+    position:absolute;
 
-    from{
-        opacity:0;
-        transform:translateY(50px);
-    }
+    bottom:45px;
 
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+    color:rgba(212,175,55,0.7);
+
+    font-size:13px;
+
+    letter-spacing:4px;
+
+    z-index:2;
+}
+
+.bottom-left{
+    left:60px;
+}
+
+.bottom-right{
+    right:60px;
 }
 
 /* RESPONSIVE */
 
-@media(max-width:992px){
+@media(max-width:1200px){
 
     .content h1{
-        font-size:70px;
-        line-height:80px;
-    }
-
-    .description{
-        font-size:20px;
-        line-height:32px;
-    }
-
-    .content h3{
-        font-size:30px;
-    }
-
-    nav a{
-        margin-left:20px;
-        font-size:15px;
+        font-size:90px;
     }
 }
 
-@media(max-width:768px){
+@media(max-width:900px){
 
     header{
         flex-direction:column;
-        gap:20px;
+        gap:25px;
     }
 
-    .top-bar{
+    nav{
+        gap:25px;
+    }
+
+    .content h1{
+        font-size:65px;
+    }
+
+    .description{
+        font-size:13px;
+        letter-spacing:3px;
+    }
+
+    .buttons{
         flex-direction:column;
-        gap:10px;
-        text-align:center;
+        align-items:center;
+    }
+}
+
+@media(max-width:600px){
+
+    .logo{
+        font-size:28px;
+        letter-spacing:8px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
     }
 
     .content h1{
         font-size:50px;
-        line-height:60px;
     }
 
-    .small-text{
-        font-size:20px;
-    }
-
-    .description{
-        font-size:18px;
+    .bottom-left,
+    .bottom-right{
+        font-size:10px;
     }
 }
